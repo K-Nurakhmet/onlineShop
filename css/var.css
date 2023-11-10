@@ -1,0 +1,20 @@
+:root {
+  --bg-color: #38C0EB;
+  --black-color: #2D2D2D;
+  --white-color: #FFFFFF;
+  --blue-color: #3670C7;
+  --yellow-color: #FFBD13;
+  --gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gap: 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --gap: 60px;
+  }
+}

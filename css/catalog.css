@@ -1,0 +1,495 @@
+.catalog {
+  padding: 20px 0 50px 0;
+}
+
+.catalog__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr minmax(min-content, 118px) repeat(2, 1fr) repeat(2, minmax(min-content, 118px)) repeat(2, 1fr) minmax(min-content, 123px);
+  grid-template-areas:
+    "book time"
+    "sneaker sneaker"
+    "sneakers sneakers"
+    "sneakers sneakers"
+    "present present"
+    "notebook notebook"
+    "cloth chemistry"
+    "cloth toys"
+    ". ."
+    "new-year new-year";
+  gap: var(--gap);
+}
+
+.catalog__item {
+  display: grid;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+}
+
+.catalog__item-text {
+  grid-area: catalog-text;
+  line-height: 1.1;
+}
+
+.catalog__item-excerpt {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.catalog__item-desc {
+  grid-column: 1/3;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.catalog__item-num {
+  grid-area: catalog-num;
+  width: 50px;
+  height: 50px;
+  padding: 15px 6px;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--yellow-color, #FFBD13);
+  text-align: center;
+}
+
+.catalog__item-text-lg {
+  grid-area: catalog-lg;
+  padding: 0 0 10px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.catalog__item-text_big_blue {
+  max-width: 260px;
+  padding: 9px 25px;
+  background-color: var(--bg-color, #38C0EB);
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.catalog__item-text_big_white {
+  align-self: center;
+  padding: 7px 41px;
+  background-color: white;
+  color: #F91155;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.catalog__item_type_book {
+  grid-area: book;
+  grid-template-columns: minmax(65px, 1fr) 1fr;
+  grid-template-areas:
+    "catalog-text ";
+  align-items: end;
+  height: 130px;
+  padding: 0 0 10px 10px;
+  background-image: url("../img/Book.jpeg");
+}
+
+.catalog__item_type_time {
+  grid-area: time;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-content: space-between;
+  height: 130px;
+  padding: 0 5px 5px 10px;
+  background-image: url("../img/Time.jpeg");
+}
+
+.catalog__item_type_sneaker {
+  grid-area: sneaker;
+  height: 118px;
+  grid-template-areas: "catalog-num";
+  justify-content: start;
+  padding: 5px;
+  background-image: url(../img/Sneaker.jpeg);
+  background-position: center bottom 36%;
+}
+
+.catalog__item_type_sneakers {
+  grid-area: sneakers;
+  grid-template-columns: 1fr;
+  align-items: end;
+  padding: 10px;
+  background-image: url("../img/Sneakers.jpeg");
+}
+
+.catalog__item_type_present {
+  grid-area: present;
+  grid-template-areas: "catalog-lg";
+  align-items: end;
+  padding: 10px 16px 5px 10px;
+  background-image: url("../img/Present.jpeg");
+  background-position: center bottom 34%;
+}
+
+.catalog__item_type_notebook {
+  grid-area: notebook;
+  grid-template-columns: minmax(120px, 1fr);
+  grid-template-areas:
+    "catalog-lg catalog-num";
+  align-items: end;
+  padding: 0 5px 5px 10px;
+  background-image: url("../img/Notebook-2.jpeg");
+}
+
+.catalog__item_type_chemistry {
+  grid-area: chemistry;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "catalog-num"
+    "catalog-lg";
+  padding: 5px 10px 0 5px;
+  background-image: url("../img/Chemistry.jpeg");
+  white-space: nowrap;
+}
+
+.catalog__item_type_toys {
+  grid-area: toys;
+  transform: scaleX(-1);
+  background-image: url("../img/Toys.jpeg");
+  background-size: 180%;
+  background-position: bottom left;
+}
+
+.catalog__item_type_cloth {
+  grid-area: cloth;
+  place-content: end;
+  padding: 10px;
+  background-image: url("../img/Cloth.jpeg");
+}
+
+.catalog__item_type_new-year {
+  grid-area: new-year;
+  grid-row: 9;
+  align-content: space-between;
+  padding: 10px 15px;
+  background-image: url("../img/New-year.jpeg");
+  background-position: center bottom 30%;
+}
+
+@media (min-width: 580px) {
+  .catalog {
+    padding: 40px 0 50px;
+  }
+
+  .catalog__list {
+    grid-template-columns: repeat(2, 140px) 1fr minmax(min-content, 140px);
+    grid-template-rows: repeat(2, minmax(max-content, 140px)) minmax(min-content, 60px) repeat(2, 70px) 60px 1fr;
+    grid-template-areas:
+      "book time sneakers sneakers"
+      "sneaker sneaker sneakers sneakers"
+      "present present cloth chemistry"
+      "notebook notebook cloth toys"
+      "new-year new-year new-year new-year";
+  }
+
+  .catalog__item {
+    border-radius: 12px;
+  }
+
+  .catalog__item-text {
+    font-size: 20px;
+  }
+
+  .catalog__item-excerpt {
+    font-size: 26px;
+  }
+
+  .catalog__item-desc {
+    align-self: flex-start;
+    font-size: 16px;
+  }
+
+  .catalog__item-text-lg {
+    font-size: 16px;
+    white-space: wrap;
+  }
+
+  .catalog__item-text_big_blue {
+    grid-column: 4/1;
+    max-width: 360px;
+    padding: 16px 25px;
+    font-size: 16px;
+    white-space: wrap;
+  }
+
+  .catalog__item-text_big_white {
+    padding: 22px 33px;
+    border-radius: 12px;
+  }
+
+  .catalog__item_type_book {
+    grid-template-columns: 1fr;
+    height: 100%;
+    padding: 0 0 19px 10px;
+  }
+
+  .catalog__item_type_time {
+    height: 100%;
+    padding: 16px 10px 10px 5px;
+  }
+
+  .catalog__item_type_sneaker {
+    height: 100%;
+    padding: 10px;
+  }
+
+  .catalog__item_type_sneakers {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    height: 380px;
+  }
+
+  .catalog__item_type_present {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-template-columns: minmax(150px, 1fr) 1fr;
+    padding: 10px 16px 19px 20px;
+  }
+
+  .catalog__item_type_notebook {
+    grid-row-start: 5;
+    grid-row-end: 7;
+    padding: 0 10px 10px 13px;
+  }
+
+  .catalog__item_type_chemistry {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    padding: 8px 10px 5px 10px;
+  }
+
+  .catalog__item_type_toys {
+    grid-column: 4;
+    grid-row: 6;
+    align-self: end;
+    height: 60px;
+    background-size: cover;
+  }
+
+  .catalog__item_type_cloth {
+    grid-row: 4/7;
+    background-position: top;
+  }
+
+  .catalog__item_type_new-year {
+    grid-row-start: 7;
+    grid-row-end: 9;
+    min-height: 337px;
+    justify-content: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    padding: 22px 0 50px;
+  }
+
+  .catalog__list {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, minmax(max-content, 217px));
+    grid-auto-rows: minmax(418px, 1fr);
+    grid-template-areas:
+      "book time sneakers sneakers"
+      "sneaker sneaker sneakers sneakers"
+      "present present cloth chemistry"
+      "notebook notebook cloth toys"
+      "new-year new-year new-year new-year";
+  }
+
+  .catalog__item {
+    border-radius: 16px;
+  }
+
+  .catalog__item-text {
+    font-size: 24px;
+  }
+
+  .catalog__item-excerpt {
+    font-size: 30px;
+  }
+
+  .catalog__item-excerpt-lg {
+    font-size: 40px;
+  }
+
+  .catalog__item-desc {
+    align-self: center;
+    font-size: 24px;
+  }
+
+  .catalog__item-num {
+    width: 88px;
+    height: 88px;
+    padding: 24px 9px;
+    font-size: 30px;
+  }
+
+  .catalog__item-text-lg {
+    line-height: 1.3;
+    font-size: 30px;
+  }
+
+  .catalog__item-text-small {
+    font-size: 20px;
+  }
+
+  .catalog__item-text_big_blue {
+    max-width: 414px;
+    padding: 37px 45px 32px 25px;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .catalog__item-text_big_white {
+    font-size: 30px;
+    padding: 24px 46px;
+  }
+
+  .catalog__item_type_book {
+    grid-template-columns: minmax(190px, 1fr) 1fr;
+    padding: 0 0 30px 11px;
+  }
+
+  .catalog__item_type_sneakers {
+    grid-row: 1/3;
+    height: 100%;
+    padding: 10px 10px 23px 21px;
+  }
+
+  .catalog__item_type_present {
+    grid-template-columns: minmax(min-content, 260px) 1fr;
+    grid-row: 3;
+    padding: 10px 16px 18px 23px;
+  }
+
+  .catalog__item_type_notebook {
+    grid-row: 4;
+  }
+
+  .catalog__item_type_chemistry {
+    grid-row: 3;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .catalog__item_type_toys {
+    grid-row: 4;
+    height: 100%;
+  }
+
+  .catalog__item_type_cloth {
+    grid-row: 3/5;
+    height: 100%;
+  }
+
+  .catalog__item_type_new-year {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    padding: 0 0 39px 32px;
+    min-height: 418px;
+    background-position: center;
+  }
+}
+
+@media (min-width: 1560px) {
+  .catalog {
+    padding: 60px 0 50px;
+  }
+
+  .catalog__list {
+    grid-template-columns: repeat(2, minmax(min-content, 245px)) minmax(550px, 1fr) repeat(2, minmax(min-content, 245px));
+    grid-template-rows: repeat(2, minmax(min-content, 245px)) repeat(2, minmax(min-content, 245px));
+    grid-template-areas:
+      "book time sneakers present present"
+      "sneaker sneaker sneakers notebook notebook"
+      "new-year new-year new-year cloth chemistry"
+      "new-year new-year new-year cloth toys";
+  }
+
+  .catalog__item {
+    border-radius: 20px;
+  }
+
+  .catalog__item-text {
+    font-size: 30px;
+  }
+
+  .catalog__item-excerpt {
+    font-size: 40px;
+  }
+
+  .catalog__item-excerpt-lg {
+    font-size: 56px;
+  }
+
+  .catalog__item-desc {
+    font-size: 30px;
+  }
+
+  .catalog__item-text-lg {
+    font-size: 40px;
+  }
+
+  .catalog__item-text-small {
+    font-size: 30px;
+  }
+
+  .catalog__item-text_big_blue {
+    max-width: 100%;
+    padding: 34px 45px 37px 21px;
+    font-size: 40px;
+    border-radius: 20px;
+  }
+
+  .catalog__item-text_big_white {
+    font-size: 40px;
+    padding: 32px 48px;
+  }
+
+  .catalog__item_type_book {
+    padding: 0 0 30px 21px;
+  }
+
+  .catalog__item_type_time {
+    padding: 16px 20px 23px 5px;
+  }
+
+  .catalog__item_type_sneaker {
+    padding: 20px;
+  }
+
+  .catalog__item_type_present {
+    grid-row: 1;
+    padding: 10px 16px 30px 27px;
+  }
+
+  .catalog__item_type_notebook {
+    grid-row: 2;
+    padding: 0 18px 23px 29px;
+  }
+
+  .catalog__item_type_toys {
+    grid-column: 5;
+  }
+
+  .catalog__item_type_cloth {
+    padding: 23px;
+  }
+
+  .catalog__item_type_new-year {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    padding: 0 0 60px 50px;
+  }
+}
