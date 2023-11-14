@@ -4,17 +4,17 @@
   --white-color: #FFFFFF;
   --blue-color: #3670C7;
   --yellow-color: #FFBD13;
-  --gap: 20px;
+  --gap: 60px;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   :root {
     --gap: 24px;
   }
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 768px) {
   :root {
-    --gap: 60px;
+    --gap: 20px;
   }
 }
